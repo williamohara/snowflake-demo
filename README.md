@@ -11,6 +11,10 @@ General instructions
 
 ....
 10. Tokenize the data using the app
+....
+14. Join data using query in joiner.sql
+
+
 
 
 
