@@ -1,4 +1,4 @@
-#VGS Vault App for Snowflake demonstration data
+# VGS Vault App for Snowflake demonstration data
 
 This repo contains queries that one can cut and paste into a Snowflake Workbook or, if you are using VSCode as your editor, use the Snowflake VS Code extention to execute these queries directly in VS Code. (https://marketplace.visualstudio.com/items?itemName=snowflake.snowflake-vsc) 
 
