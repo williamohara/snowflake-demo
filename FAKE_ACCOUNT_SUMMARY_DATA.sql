@@ -1005,3 +1005,12 @@ insert into FAKE_ACCOUNT_SUMMARY_DATA (id, account_nick_name, account_value, ass
  (141, 'Sarahs checking', 6395263.49, '345-678'),
  (163, 'Johns savings', 1501841.7, '123-456'),
  (168, 'Davids checking', 1133840.56, '345-678');
+
+
+ALTER TABLE new_demo_will.public.FAKE_ACCOUNT_SUMMARY_DATA add account_ssn varchar(50);
+
+update FAKE_ACCOUNT_SUMMARY_DATA
+set account_ssn = a.ssn_number
+from
+   FAKE_CUSTOMER_DATA as a 
+   where a.id = fake_account_summary_data.id ;

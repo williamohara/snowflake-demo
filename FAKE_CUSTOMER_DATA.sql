@@ -10,6 +10,8 @@ create or replace table FAKE_CUSTOMER_DATA (
 	salary_usd DECIMAL(9,2),
 	institution_account_number INT
 );
+
+
 insert into FAKE_CUSTOMER_DATA (id, first_name, last_name, email, ip_address, ssn_number, drivers_lic, pet_name, salary_usd, institution_account_number) values
  (1, 'Peggie', 'Castagneto', 'pcastagneto0@live.com', '206.114.196.24', '114-66-6742', 'DL-9245901', 'Méthode', 4951392.04, 156308),
  (2, 'Alain', 'Dudenie', 'adudenie1@unblog.fr', '176.53.131.87', '244-64-0900', 'DL-2122725', 'Méghane', 4820286.33, 49308),
