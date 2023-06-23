@@ -1,17 +1,17 @@
+
+
 create or replace table FAKE_CUSTOMER_DATA (
 	id INT,
 	first_name VARCHAR(50),
 	last_name VARCHAR(50),
 	email VARCHAR(50),
-	ip_address VARCHAR(20),
+	ip_address VARCHAR(50),
 	ssn_number VARCHAR(50),
 	drivers_lic VARCHAR(50),
 	pet_name VARCHAR(50),
 	salary_usd DECIMAL(9,2),
 	institution_account_number INT
 );
-
-
 insert into FAKE_CUSTOMER_DATA (id, first_name, last_name, email, ip_address, ssn_number, drivers_lic, pet_name, salary_usd, institution_account_number) values
  (1, 'Peggie', 'Castagneto', 'pcastagneto0@live.com', '206.114.196.24', '114-66-6742', 'DL-9245901', 'Méthode', 4951392.04, 156308),
  (2, 'Alain', 'Dudenie', 'adudenie1@unblog.fr', '176.53.131.87', '244-64-0900', 'DL-2122725', 'Méghane', 4820286.33, 49308),
@@ -346,3 +346,19 @@ insert into FAKE_CUSTOMER_DATA (id, first_name, last_name, email, ip_address, ss
  (331, 'Janna', 'Hartropp', 'jhartropp96@disqus.com', '173.205.155.175', '406-04-1198', 'DL-4933609', 'Ruò', 4258136.39, 15449),
  (332, 'Ara', 'McElrea', 'amcelrea97@marketwatch.com', '67.162.131.43', '470-64-7921', 'DL-3092829', 'Edmée', 1469123.94, 220987),
  (333, 'Emery', 'Leaton', 'eleaton98@imdb.com', '240.195.170.135', '576-14-7067', 'DL-8620096', 'Eliès', 2789133.51, 151779);
+
+
+
+
+
+---djdj
+
+CREATE OR REPLACE SEQUENCE SEQUENCE_DEMO START = 1 INCREMENT = 1;
+ALTER TABLE fake_customer_data ADD COLUMN IF NOT EXISTS vgs_tkzr INTEGER;
+UPDATE fake_customer_data SET vgs_tkzr = SEQUENCE_DEMO.nextval;
+
+select * from FAKE_ACCOUNT_SUMMARY_DATA;
+
+show columns in fake_customer_data;
+
+tok_live_m7ZhuATA2PeN67ZEBJ9p17
