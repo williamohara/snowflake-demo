@@ -1,5 +1,5 @@
 
--- adds a sequenced column to a table
+-- adds a sequenced column to a table IN CASE IT DOES NOT HAVE AN INDEX
 
 CREATE OR REPLACE SEQUENCE SEQUENCE_DEMO START = 1 INCREMENT = 1;
 ALTER TABLE fake_customer_data ADD COLUMN IF NOT EXISTS vgs_tkzr INTEGER;

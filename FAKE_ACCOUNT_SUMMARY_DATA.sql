@@ -1,13 +1,13 @@
 
 
 create or replace table FAKE_ACCOUNT_SUMMARY_DATA (
-	id INT,
+	foreign_id INT,
 	account_nick_name VARCHAR(21),
 	account_value DECIMAL(21,2),
 	asset_manager_id VARCHAR(7)
 );
 
-insert into FAKE_ACCOUNT_SUMMARY_DATA (id, account_nick_name, account_value, asset_manager_id) values
+INSERT INTO FAKE_ACCOUNT_SUMMARY_DATA (foreign_id, account_nick_name, account_value, asset_manager_id) values
  (257, 'Davids checking', 9907125.75, '345-678'),
  (273, 'Emilys savings', 5379383.13, '345-678'),
  (117, 'Michaels investments', 3900980.59, '345-678'),
@@ -1010,19 +1010,19 @@ insert into FAKE_ACCOUNT_SUMMARY_DATA (id, account_nick_name, account_value, ass
  (168, 'Davids checking', 1133840.56, '345-678');
 
 
-ALTER TABLE FAKE_ACCOUNT_SUMMARY_DATA add account_ssn varchar(50);
+ALTER TABLE FAKE_ACCOUNT_SUMMARY_DATA ADD account_ssn VARCHAR;
 
--- ALTER TABLE FAKE_ACCOUNT_SUMMARY_DATA DROP COLUMN VGS_TKZR;
+
 
 update FAKE_ACCOUNT_SUMMARY_DATA
 set account_ssn = a.ssn_number
 from
    FAKE_CUSTOMER_DATA as a 
-   where a.id = fake_account_summary_data.id ;
+   where a.id = FAKE_ACCOUNT_SUMMARY_DATA.foreign_id ;
 
 CREATE OR REPLACE SEQUENCE SEQUENCE_DEMO START = 1 INCREMENT = 1;
-ALTER TABLE fake_account_summary_data ADD COLUMN IF NOT EXISTS vgs_tkzr INTEGER;
-UPDATE fake_account_summary_data SET vgs_tkzr = SEQUENCE_DEMO.nextval;
+ALTER TABLE FAKE_ACCOUNT_SUMMARY_DATA ADD COLUMN IF NOT EXISTS INDEX_KEY INTEGER;
+UPDATE FAKE_ACCOUNT_SUMMARY_DATA SET INDEX_KEY = SEQUENCE_DEMO.nextval;
 
 select *  from FAKE_ACCOUNT_SUMMARY_DATA;
 
