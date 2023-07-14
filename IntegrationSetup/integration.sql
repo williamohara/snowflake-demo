@@ -6,5 +6,8 @@ CREATE OR REPLACE API INTEGRATION vgs_app_integration
   api_allowed_prefixes = ('https://ys8ux7iwbg.execute-api.us-west-2.amazonaws.com/snowflake/')
   enabled = true;
 
+-- run and give output to vgs
+DESCRIBE API INTEGRATION VGS_APP_INTEGRATION;
+
 --- run and send output to VGS
-  SELECT SYSTEM$GET_SNOWFLAKE_PLATFORM_INFO();
+SELECT SYSTEM$GET_SNOWFLAKE_PLATFORM_INFO();
